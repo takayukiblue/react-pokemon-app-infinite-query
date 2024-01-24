@@ -20,7 +20,6 @@ function App() {
     error,
   } = useInfiniteQuery({
     queryKey: ['pokemonList', queryKey],
-    // queryFn: ({ pageParam = initialURL }) => getAllPokemon(pageParam),
     queryFn: ({ pageParam = url }) => getAllPokemon(pageParam),
     getNextPageParam: (lastPage) => {
       return lastPage.next || undefined;
